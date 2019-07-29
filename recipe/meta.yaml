@@ -10,8 +10,11 @@ source:
   sha256: b1fc75b877e9b2f46845a455fbdcfb0f0d9c727c45c19a745d02db620a9ef0be
 
 build:
+  noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  entry_points:
+    - jsonpath.py=jsonpath_ng.bin.jsonpath:entry_point
+  script: "{{ PYTHON }} -m pip install --no-deps . -vv"
 
 requirements:
   host:
