@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - jsonpath.py=jsonpath_ng.bin.jsonpath:entry_point
   script: "{{ PYTHON }} -m pip install --no-deps . -vv"
