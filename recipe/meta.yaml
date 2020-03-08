@@ -1,5 +1,5 @@
 {% set name = "jsonpath-ng" %}
-{% set version = "1.4.3" %}
+{% set version = "1.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b1fc75b877e9b2f46845a455fbdcfb0f0d9c727c45c19a745d02db620a9ef0be
+  sha256: 0a3bec954fc8ca0b48b65bf1bb1f80fe9ae02dac1e632572284f2f6c2e1c4a9e
 
 build:
   noarch: python
-  number: 1
+  number: 0
   entry_points:
     - jsonpath.py=jsonpath_ng.bin.jsonpath:entry_point
-  script: "{{ PYTHON }} -m pip install --no-deps . -vv"
+  script: {{ PYTHON }} -m pip install --no-deps . -vv
 
 requirements:
   host:
@@ -35,7 +35,7 @@ about:
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
-  summary: 'Python JSONPath Next-Generation'
+  summary: Python JSONPath Next-Generation
 
   description: |
     A final implementation of JSONPath for Python that aims to be standard compliant,
