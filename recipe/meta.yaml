@@ -1,5 +1,5 @@
 {% set name = "jsonpath-ng" %}
-{% set version = "1.5.1" %}
+{% set version = "1.5.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 77b1f93f4444a50c924cb11cdc273546ff79f41830d485916fc6ddf4e0c1ce55
+  sha256: 144d91379be14d9019f51973bd647719c877bfc07dc6f3f5068895765950c69d
 
 build:
   noarch: python
