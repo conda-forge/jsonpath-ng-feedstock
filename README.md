@@ -5,9 +5,11 @@ Home: https://github.com/h2non/jsonpath-ng
 
 Package license: Apache-2.0
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jsonpath-ng-feedstock/blob/master/LICENSE.txt)
 
 Summary: Python JSONPath Next-Generation
+
+Development: https://github.com/h2non/jsonpath-ng
 
 A final implementation of JSONPath for Python that aims to be standard compliant,
 including arithmetic and binary comparison operators.
@@ -40,6 +42,7 @@ Installing `jsonpath-ng` from the `conda-forge` channel can be achieved by addin
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
 Once the `conda-forge` channel has been enabled, `jsonpath-ng` can be installed with:
@@ -110,15 +113,14 @@ build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
  * If the version of a package **is not** being increased, please add or increase
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string).
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string).
  * If the version of a package **is** being increased, please remember to return
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string)
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string)
    back to 0.
 
 Feedstock Maintainers
 =====================
 
-* [@MaxRis](https://github.com/MaxRis/)
 * [@efiop](https://github.com/efiop/)
 * [@shcheklein](https://github.com/shcheklein/)
 
