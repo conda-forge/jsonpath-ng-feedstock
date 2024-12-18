@@ -6,27 +6,29 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 086c37ba4917304850bd837aeab806670224d3f038fe2833ff593a672ef0a5fa
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - jsonpath.py=jsonpath_ng.bin.jsonpath:entry_point
   script: {{ PYTHON }} -m pip install --no-deps . -vv
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - ply
     - decorator
     - six
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - jsonpath_ng
 
