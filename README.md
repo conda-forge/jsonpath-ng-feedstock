@@ -151,4 +151,5 @@ Feedstock Maintainers
 
 * [@efiop](https://github.com/efiop/)
 * [@shcheklein](https://github.com/shcheklein/)
+* [@thewchan](https://github.com/thewchan/)
 
