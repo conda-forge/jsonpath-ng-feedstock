@@ -1,5 +1,5 @@
 {% set name = "jsonpath-ng" %}
-{% set version = "1.6.1" %}
+{% set version = "1.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,30 +7,33 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 086c37ba4917304850bd837aeab806670224d3f038fe2833ff593a672ef0a5fa
+  sha256: f6f5f7fd4e5ff79c785f1573b394043b39849fb2bb47bcead935d12b00beab3c
 
 build:
   noarch: python
-  number: 1
+  number: 0
   entry_points:
-    - jsonpath.py=jsonpath_ng.bin.jsonpath:entry_point
+    - jsonpath_ng=jsonpath_ng.bin.jsonpath:entry_point
   script: {{ PYTHON }} -m pip install --no-deps . -vv
 
 requirements:
   host:
     - python {{ python_min }}
     - pip
+    - setuptools
   run:
     - python >={{ python_min }}
     - ply
-    - decorator
-    - six
 
 test:
-  requires:
-    - python {{ python_min }}
   imports:
     - jsonpath_ng
+  requires:
+    - python {{ python_min }}
+    - pip
+  commands:
+    - pip check
+    - jsonpath_ng --help
 
 about:
   home: https://github.com/h2non/jsonpath-ng
@@ -48,3 +51,4 @@ extra:
   recipe-maintainers:
     - shcheklein
     - efiop
+    - thewchan
