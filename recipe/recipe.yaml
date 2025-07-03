@@ -1,0 +1,58 @@
+schema_version: 1
+
+context:
+  name: jsonpath-ng
+  version: 1.7.0
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: f6f5f7fd4e5ff79c785f1573b394043b39849fb2bb47bcead935d12b00beab3c
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install --no-deps . -vv
+  python:
+    entry_points:
+      - jsonpath_ng=jsonpath_ng.bin.jsonpath:entry_point
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - ply
+
+tests:
+  - python:
+      imports:
+        - jsonpath_ng
+      pip_check: true
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+    script:
+      - jsonpath_ng --help
+
+about:
+  license: Apache-2.0
+  license_file: LICENSE
+  summary: Python JSONPath Next-Generation
+  description: |
+    A final implementation of JSONPath for Python that aims to be standard compliant,
+    including arithmetic and binary comparison operators.
+  homepage: https://github.com/h2non/jsonpath-ng
+  repository: https://github.com/h2non/jsonpath-ng
+
+extra:
+  recipe-maintainers:
+    - shcheklein
+    - efiop
+    - thewchan

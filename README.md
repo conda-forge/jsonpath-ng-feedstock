@@ -14,7 +14,6 @@ Development: https://github.com/h2non/jsonpath-ng
 A final implementation of JSONPath for Python that aims to be standard compliant,
 including arithmetic and binary comparison operators.
 
-
 Current build status
 ====================
 
@@ -151,4 +150,5 @@ Feedstock Maintainers
 
 * [@efiop](https://github.com/efiop/)
 * [@shcheklein](https://github.com/shcheklein/)
+* [@thewchan](https://github.com/thewchan/)
 
