@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: jsonpath-ng
-  version: "1.13.0"
+  version: "1.14.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: da54eff64eef303b90a8491f50c607e6beb2eb4a6e66828edab948766d40c531
+  sha256: 8c8b0b32c24421ba150621863c6a943e84861edbe6a4414261d1ad7cba7828bc
 
 build:
   number: 0
