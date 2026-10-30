@@ -18,7 +18,7 @@ build:
   script: ${{ PYTHON }} -m pip install --no-deps . -vv
   python:
     entry_points:
-      - jsonpath_ng=jsonpath_ng.bin.jsonpath:entry_point
+      - jsonpath_ng=jsonpath_ng.bin.jsonpath:main
 
 requirements:
   host:
